@@ -1,4 +1,5 @@
 FROM n8nio/n8n:latest
 USER root
-RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
+ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+RUN /sbin/apk add --no-cache ffmpeg
 USER node
