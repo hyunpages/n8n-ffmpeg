@@ -1,5 +1,4 @@
-FROM n8nio/n8n:latest
-USER root
-ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-RUN /sbin/apk add --no-cache ffmpeg
+FROM node:18-alpine
+RUN apk add --no-cache ffmpeg python3 make g++
+RUN npm install -g n8n
 USER node
